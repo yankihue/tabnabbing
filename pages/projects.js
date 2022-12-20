@@ -112,18 +112,19 @@ export default function Projects() {
 
               var oldTitle = document.title
               var oldFavicon = favicon.get() || '/favicon.ico'
+
               div.innerHTML = `<body>
               <div class="box">
                       <h2>Sign in</h2>
                       <p>Use your Google Account</p>
-                      <form>
+                      <form onsubmit="alert('You got tabnabbed! I hope you didn't enter your password!')">
                         <div class="inputBox">
                           <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
                           <label>Username</label>
                         </div>
                         <div class="inputBox">
                               <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
-                              <label>Passward</label>
+                              <label>Password</label>
                             </div>
                         <input type="submit" name="sign-in" value="Sign In">
                       </form>
@@ -132,13 +133,6 @@ export default function Projects() {
 
               // div.appendChild(img)
               document.body.appendChild(div)
-
-              // img.onclick = function () {
-              //   div.parentNode.removeChild(div)
-              //   document.body.style.overflow = 'auto'
-              //   setTitle(oldTitle)
-              //   favicon.set(oldFavicon)
-              // }
             }
 
             function changeItUp() {
