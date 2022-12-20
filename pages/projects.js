@@ -117,7 +117,7 @@ export default function Projects() {
               <div class="box">
                       <h2>Sign in</h2>
                       <p>Use your Google Account</p>
-                      <form onsubmit="alert("You got tabnabbed! I hope you didn't enter your password!");">
+                      <form onsubmit="alert('You got tabnabbed! I hope you didnt enter your password!')">
                         <div class="inputBox">
                           <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
                           <label>Username</label>
