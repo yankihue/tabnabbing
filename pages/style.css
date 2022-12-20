@@ -9,12 +9,12 @@
   border: 1px solid #dadce0;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+  color: #202124;
 }
 
 .box h2 {
   margin: 0px 0 -0.125rem;
   padding: 0;
-  color: #fff;
   text-align: center;
   color: #202124;
   font-family: 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
