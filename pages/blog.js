@@ -25,7 +25,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
         {typeof window !== 'undefined' &&
           (function () {
             if (window.opener) {
-              window.opener.location = 'http://localhost:3000/contact'
+              window.opener.location = 'https://yildiz.edu.tr'
             }
           })()}
       </Script>

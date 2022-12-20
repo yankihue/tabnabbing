@@ -25,7 +25,7 @@ export default function Home({ posts }) {
           </h1>
           <button
             onClick={() => {
-              typeof window !== 'undefined' && window.open('http://localhost:3000/blog')
+              typeof window !== 'undefined' && window.open('https://tabnabbing.vercel.app/blog')
             }}
           >
             Check out our blog!
