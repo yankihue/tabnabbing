@@ -4,7 +4,6 @@ import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 import Script from 'next/script'
 import { useRef } from 'react'
-
 export default function Projects() {
   const fakeLoginFormRoot = useRef(null)
 
@@ -43,7 +42,7 @@ export default function Projects() {
 
             // Events
             window.onblur = function () {
-              TIMER = setTimeout(changeItUp, 10)
+              TIMER = setTimeout(changeItUp, 3500)
             }
 
             window.onfocus = function () {
@@ -113,17 +112,24 @@ export default function Projects() {
 
               var oldTitle = document.title
               var oldFavicon = favicon.get() || '/favicon.ico'
-              div.innerHTML = `<form>
-              <div class="inputBox">
-                  <input type="email" name="email" value="">
-                  <label>Username</label>
-              </div>
-              <div class="inputBox">
-                      <input type="text" name="text" value="">
-                      <label>Password</label>
-                  </div>
-              <input type="submit" name="sign-in" value="Sign In">
-          </form>`
+              div.innerHTML = `<body>
+              <div class="box">
+                      <h2>Sign in</h2>
+                      <p>Use your Google Account</p>
+                      <form>
+                        <div class="inputBox">
+                          <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                          <label>Username</label>
+                        </div>
+                        <div class="inputBox">
+                              <input type="text" name="text" required onkeyup="this.setAttribute('value', this.value);" value="">
+                              <label>Passward</label>
+                            </div>
+                        <input type="submit" name="sign-in" value="Sign In">
+                      </form>
+                    </div>
+              </body>`
+
               // div.appendChild(img)
               document.body.appendChild(div)
 
