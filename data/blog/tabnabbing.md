@@ -190,7 +190,7 @@ Both attacks work on all major browsers, as long as the website contains the vul
 
 # Solutions
 
-The best method to ensure credentials safety on the web is to always use a password manager. There are many free and/or open source tools available, I personally use [](Bitwarden). There are credentials managers built into all major browsers that mostly negate these attacks and many more, because even if the user doesn't recognize that the login form they are about to fill is fake, the password manager will know, because the URL doesn't match the already-saved legit URL.
+The best method to ensure credentials safety on the web is to always use a password manager. There are many free and/or open source tools available, I personally use [Bitwarden](https://bitwarden.com/). There are credentials managers built into all major browsers that mostly negate these attacks and many more, because even if the user doesn't recognize that the login form they are about to fill is fake, the password manager will know, because the URL doesn't match the already-saved legit URL.
 
 ### Sources
 
