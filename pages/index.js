@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import NewsletterForm from '@/components/NewsletterForm'
-
+import Banner from '@/components/Banner'
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
@@ -23,13 +23,14 @@ export default function Home({ posts }) {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
-          <button
+          <Banner />
+          {/* <button
             onClick={() => {
               typeof window !== 'undefined' && window.open('https://tabnabbing.vercel.app/blog')
             }}
           >
             Check out our blog!
-          </button>
+          </button> */}
           {/* Javascript and HTML version of same vulnerability */}
           {/* <a href="https://tabnabbing.vercel.app/blog" target="_blank">
             Check out our blog!
