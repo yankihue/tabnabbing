@@ -195,6 +195,9 @@ Both attacks work on all major browsers, as long as the website contains the vul
 
 The best method to ensure credentials safety on the web is to always use a password manager. There are many free and/or open source tools available, I personally use [Bitwarden](https://bitwarden.com/). There are credentials managers built into all major browsers that mostly negate these attacks and many more, because even if the user doesn't recognize that the login form they are about to fill is fake, the password manager will know, because the URL doesn't match the already-saved legit URL.
 
+To prevent reverse tabnabbing and cut the back link, when developing websites with user-submitted content, add the attribute `rel="noopener"` on the tag used to create the link from the parent page to the child page. This attribute value cuts the link, but depending on the browser, lets referrer information be present in the request to the child page.
+To also remove the referrer information use this attribute value: `rel="noopener noreferrer"`.
+
 ### Sources
 
 - https://owasp.org/www-community/attacks/Reverse_Tabnabbing
