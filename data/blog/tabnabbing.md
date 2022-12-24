@@ -22,13 +22,13 @@ First, let's talk about the simple version: tabnabbing. The term was coined in [
 
 As Raskin notes in their article, the phishing content can be customized for each user in a spear phishing attack. The attack is very effective when posing as bank websites as a critical website warning the user that their login has timed out will not seem suspicious to the user. A user's company, password manager or even government login could be compromised if the victim is not paying attention.
 
-Here's the attack script as seen on [this site's blog page](tabnabbing.vercel.app/blog) mostly adapted from [this gist](https://gist.github.com/cabe56/96b387a7f901f0219c8c)
+Here's the attack script as seen on [this site's projects page](https://tabnabbing.vercel.app/projects) mostly adapted from [this gist](https://gist.github.com/cabe56/96b387a7f901f0219c8c):
 
 <details>
 <summary>Click to expand</summary>
 ```javascript
 <script id="tabnabbing-example" type="application/javascript">
-  {typeof window !== 'undefined' &&
+  {
     (function () {
       var TIMER = null
       var HAS_SWITCHED = false
@@ -148,35 +148,38 @@ This is an attack where the victim clicks on an unsafely routed link, and when t
 
 Explanation given by [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#tabnabbing) is as follows:
 
+![With back link](https://owasp.org/www-community/assets/images/TABNABBING_OVERVIEW_WITH_LINK.png)
+
 The attack is typically possible when the source site uses a target instruction in a html link to specify a target loading location that do not replace the current location and then let the current window/tab available and does not include any of the preventative measures detailed below.
 
 The attack is also possible for link opened via the window.open javascript function.
 
+Why is this harmful? Because neither the linked-to page, nor the phishing page lie on the same domain or origin as the original page. The site doesn't need to be compromised. It just needs to allow user-submitted anchors with target="\_blank".
+
 ## Examples
 
-Vulnerable page([landing page of this site](tabnabbing.vercel.app)):
+Vulnerable page ([landing page of this site](https://tabnabbing.vercel.app)):
 
 ```jsx
 <button
   onClick={() => {
-    typeof window !== 'undefined' && window.open('https://tabnabbing.vercel.app/blog')
+    window.open('https://tabnabbing.vercel.app/blog')
   }}
 >
   Check out our blog!
 </button>
 ```
 
-Malicious site that is linked to([the blog page of this site](tabnabbing.vercel.app/blog)):
+Malicious site that is linked to ([the blog page of this site](https://tabnabbing.vercel.app/blog)):
 
 ```html
 <script id="reverse-tabnabbing-example" type="application/javascript">
   {
-    typeof window !== 'undefined' &&
-      (function () {
-        if (window.opener) {
-          window.opener.location = 'https://yildiz.edu.tr'
-        }
-      })()
+    function () {
+      if (window.opener) {
+        window.opener.location = 'https://yildiz.edu.tr'
+      }
+    }()
   }
 </script>
 ```
