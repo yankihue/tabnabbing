@@ -8,7 +8,7 @@ summary: Tabnabbing, with its reverse variant, is an exploit enabling malicious 
 
 # Introduction
 
-When working with links and windows on the web, there are manly complex things to consider. Tabnabbing and reverse tabnabbing however, don't require complex factors in your code, and are both easy to pull off and defend against. These attacks mainly utilize the user's attention being somewhere else. While the user is occupied with something else, the tab is either replaced or changed in a way to permit a phishing attack.
+When working with links and windows on the web, there are many complex things to consider. Tabnabbing and reverse tabnabbing however, don't require complex factors in your code, and are both easy to pull off and defend against. These attacks mainly utilize the user's attention being somewhere else. While the user is occupied with something else, the tab is either replaced or changed in a way to permit a phishing attack.
 
 # Tabnabbing
 
