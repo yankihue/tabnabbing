@@ -1,5 +1,5 @@
 # Tabnabbing & Reverse Tabnabbing
-A cybersecurity demonstration site to show off tabnabbing methods built on  [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog). The banner on the [landing page](https://tabnabbing.vercel.app) demonstrates the reverse tabnabbing method, while the [projects page](https:/tabnabbing.vercel.app/projects) includes a script to demonstrate tabnabbing. You can read the [latest blog post](https://tabnabbing.vercel.app/blog/tabnabbing) on the site to learn more. 
+A cybersecurity demonstration site to show off tabnabbing methods built on  [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog). The banner on the [landing page](https://tabnabbing.vercel.app) demonstrates the reverse tabnabbing method, while the [projects page](https://tabnabbing.vercel.app/projects) includes a script to demonstrate tabnabbing. You can read the [latest blog post](https://tabnabbing.vercel.app/blog/tabnabbing) on the site to learn more. 
 
 ## Sources
 https://owasp.org/www-community/attacks/Reverse_Tabnabbing
